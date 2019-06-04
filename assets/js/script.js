@@ -23,8 +23,12 @@ $(document).on("click", "button", function() { // On click event listener for <b
             var p =  $('<p>')
             $(p).text(results[i].rating)
             
-            var gifImage = $('<img>')
-            gifImage.attr("src", results[i].images.fixed_height.url)
+            var gifImage = $('<img class="giphy">')
+            gifImage.attr("data-state", "still")
+            gifImage.attr("src", results[i].images.fixed_height_still.url)
+            gifImage.attr("data-animate", results[i].images.fixed_height.url)
+            gifImage.attr("data-still", results[i].images.fixed_height_still.url)
+            
             
             $(gifDiv).append(p)
             $(gifDiv).append(gifImage)
@@ -34,8 +38,19 @@ $(document).on("click", "button", function() { // On click event listener for <b
     });
 });
 
+$(document).on("click", ".giphy", function() { //Event listner for GIFs --CLICK TO ANIMATE--
+    var state = $(this).attr('data-state');
+    console.log(state);
+
+    if (state === 'still') {
+        var animate = $(this).attr('data-animate');
+        $(this).attr('src', animate);
+        state = 'animate';
+      }
+});
+
 
     
 $(document).ready(function() { // On document load...
-
-})
+    // TODO: Create functional dynamic button generator
+});
