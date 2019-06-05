@@ -1,4 +1,21 @@
+$("#search-gif").on("click", function() { // Clears search input value on click
+    $(this).val("");
+});
 
+$("#add-gif").on("click", function(event) { // On click event listener for add gif button
+    // prevent form from submitting
+    event.preventDefault();
+
+    var searchTerm = $("#search-gif").val();
+    console.log(searchTerm);
+
+    var newButton = $("<button>")
+    newButton.addClass("btn btn-primary");
+    newButton.attr("data-topic", searchTerm);
+    newButton.text(searchTerm);
+
+    $("#button-place").after(newButton);
+});
 
 
 $(document).on("click", "button", function() { // On click event listener for <button> tags
