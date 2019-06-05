@@ -6,7 +6,7 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
     // prevent form from submitting
     event.preventDefault();
 
-    var searchTerm = $("#search-gif").val();
+    var searchTerm = $("#search-gif").val().trim();
     console.log(searchTerm);
 
     var newButton = $("<button>")
@@ -15,6 +15,8 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
     newButton.text(searchTerm);
 
     $("#button-place").after(newButton);
+
+    $("#search-gif").val("");
 });
 
 
@@ -38,7 +40,7 @@ $(document).on("click", "button", function() { // On click event listener for <b
             var gifDiv = $('<div>')
             
             var p =  $('<p>')
-            $(p).text(results[i].rating)
+            $(p).text("Rating: " + results[i].rating)
             
             var gifImage = $('<img class="giphy">')
             gifImage.attr("data-state", "still")
@@ -46,7 +48,7 @@ $(document).on("click", "button", function() { // On click event listener for <b
             gifImage.attr("data-animate", results[i].images.fixed_height.url)
             gifImage.attr("data-still", results[i].images.fixed_height_still.url)
             
-            
+            $(gifDiv).addClass("col-6")
             $(gifDiv).append(p)
             $(gifDiv).append(gifImage)
             
