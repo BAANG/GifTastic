@@ -1,3 +1,7 @@
+body {
+    background-image: url(../images/doodles.png)
+}
+
 .btn {
     margin: 5px;
 }
@@ -8,12 +12,41 @@ img {
     
 }
 
+.jumbotron {
+    border-radius: 20px !important;
+    border: 2px solid #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
 p {
     margin-bottom: 0.5rem !important;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 0.5rem !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#gifButtons, #description {
+    background-color: #E9ECEF;
+    border-radius: 20px;
+    /* margin-left: 15px !important;
+    margin-right: 15px !important; */
 }
 
 @media only screen and (max-width: 1200px) {
     img {
         max-width: 210px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #search-gif {
+        max-width: 155px;
     }
 }

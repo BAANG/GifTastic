@@ -6,17 +6,22 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
     // prevent form from submitting
     event.preventDefault();
 
+
     var searchTerm = $("#search-gif").val().trim();
     console.log(searchTerm);
 
-    var newButton = $("<button>")
-    newButton.addClass("btn btn-primary");
-    newButton.attr("data-topic", searchTerm);
-    newButton.text(searchTerm);
-
-    $("#button-place").after(newButton);
-
-    $("#search-gif").val("");
+    if (!searchTerm) { // Does not allow for empty search value
+        return
+    } else {
+        var newButton = $("<button>")
+        newButton.addClass("btn btn-primary");
+        newButton.attr("data-topic", searchTerm);
+        newButton.text(searchTerm);
+    
+        $("#button-place").after(newButton);
+    
+        $("#search-gif").val("");
+    }
 });
 
 
@@ -38,7 +43,7 @@ $(document).on("click", "button", function() { // On click event listener for <b
         for (var i = 0; i < results.length; i++) {
             
             var p =  $('<p>')
-                $(p).text("Rating: " + results[i].rating)
+                $(p).text("Rating: " +  results[i].rating)
             
             var gifImage = $('<img class="giphy">')
                 gifImage.attr("data-state", "still")
@@ -47,7 +52,7 @@ $(document).on("click", "button", function() { // On click event listener for <b
                 gifImage.attr("data-still", results[i].images.fixed_height_still.url)     
             
             var gifDiv = $('<div>')
-                $(gifDiv).addClass("col-lg-4 col-md-6 col-sm-12")
+                $(gifDiv).addClass("col-lg-4 col-md-6 col-xs-12")
                 $(gifDiv).append(p)
                 $(gifDiv).append(gifImage)
                 

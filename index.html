@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i|Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <title>GifTastic Voyage</title>
   </head>
@@ -16,16 +17,19 @@
     <div class="container">
       <div class="jumbotron jumbotron-fluid text-center">
         <h1>Let's Look at GIFs!</h1>
-        <p class="lead">Click on the buttons below to generate some GIFs!</p>
+        <h4 class="lead">Click on the buttons below to generate some GIFs,
+          <br>or add your own to search for!
+        </h4>
       </div>
 
       <div class="row">
         <div class="col-4" id="gifButtons">
           <div class="row">
             <div class="col-12">
+              <br>
               <form>
                 <span>
-                  <input type="text" id="search-gif" value="Search for more GIFs"></input>
+                  <input type="text" id="search-gif" placeholder=" Search for more GIFs"></input>
                   <input type="submit" class="btn btn-primary" id="add-gif" value="Add GIFs!"></input>
                 </span>
               </form>
