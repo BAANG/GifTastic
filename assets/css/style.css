@@ -12,6 +12,10 @@ img {
     
 }
 
+#clear-gif {
+    width: 100%;
+}
+
 .jumbotron {
     border-radius: 20px !important;
     border: 2px solid #ffffff;

@@ -16,9 +16,8 @@
   <body>
     <div class="container">
       <div class="jumbotron jumbotron-fluid text-center">
-        <h1>Let's Look at GIFs!</h1>
-        <h4 class="lead">Click on the buttons below to generate some GIFs,
-          <br>or add your own to search for!
+        <h1>GIF Me Some Sugar!</h1>
+        <h4 class="lead">You say 'jif', I say 'gif'! 
         </h4>
       </div>
 
@@ -36,9 +35,13 @@
             </div>
           </div>
           <hr id="button-place">
-          <button class="btn btn-primary" data-topic="dog">Dogs</button>
-          <button class="btn btn-primary" data-topic="spider-man">Spider-Man</button>
-          <button class="btn btn-primary" data-topic="calculating">Calculating</button>
+          <button class="btn btn-primary gifBtn" data-topic="dog">Dogs</button>
+          <button class="btn btn-primary gifBtn" data-topic="spider-man">Spider-Man</button>
+          <button class="btn btn-primary gifBtn" data-topic="calculating">Calculating</button>
+          <hr>
+          <button class="btn btn-primary" id="clear-gif">Clear All</button>
+          <br>
+          <small>**Click the GIFs to begin animation playback</small>
         </div>
         <div class="col-8">
           <div class="row" id="gifPlace">

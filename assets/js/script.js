@@ -14,7 +14,7 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
         return
     } else {
         var newButton = $("<button>")
-        newButton.addClass("btn btn-primary");
+        newButton.addClass("btn btn-primary gifBtn");
         newButton.attr("data-topic", searchTerm);
         newButton.text(searchTerm);
     
@@ -24,8 +24,12 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
     }
 });
 
+$("#clear-gif").on("click", function() {
+    $("#gifPlace").empty();
+})
 
-$(document).on("click", "button", function() { // On click event listener for <button> tags
+
+$(document).on("click", ".gifBtn", function() { // On click event listener for <button> tags
     var topic = $(this).attr("data-topic");
     console.log(topic)
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
