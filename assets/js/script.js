@@ -43,9 +43,11 @@ $(document).on("click", "button", function() { // On click event listener for <b
         for (var i = 0; i < results.length; i++) {
             
             var gifDiv = $('<div>')
+
+            var rating = results[i].rating
             
             var p =  $('<p>')
-            $(p).text("Rating: " + results[i].rating)
+            $(p).text("Rating: " + rating.toUpperCase())
             
             var gifImage = $('<img class="giphy">')
             gifImage.attr("data-state", "still")
