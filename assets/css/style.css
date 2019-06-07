@@ -12,7 +12,7 @@ img {
     
 }
 
-#clear-gif {
+#clear-gif, .trending {
     width: 100%;
 }
 
@@ -48,8 +48,7 @@ p {
         max-width: 210px;
     }
 }
-
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 768px) {
     #search-gif {
         max-width: 155px;
     }

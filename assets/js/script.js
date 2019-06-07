@@ -10,7 +10,7 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
     console.log(searchTerm);
 
     var newButton = $("<button>")
-    newButton.addClass("btn btn-primary");
+    newButton.addClass("btn btn-info gifBtn");
     newButton.attr("data-topic", searchTerm);
     newButton.text(searchTerm);
 
@@ -23,8 +23,13 @@ $("#add-gif").on("click", function(event) { // On click event listener for add g
 $(document).on("click", "button", function() { // On click event listener for <button> tags
     var topic = $(this).attr("data-topic");
     console.log(topic)
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    topic + "&api_key=5FzCS8nECS5DZZ0WLDqTc8yZ7NZSLg82&limit=10";
+    
+    if (this.classList.contains("trending")) {
+        queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=5FzCS8nECS5DZZ0WLDqTc8yZ7NZSLg82&limit=12"
+    } else {
+        queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        topic + "&api_key=5FzCS8nECS5DZZ0WLDqTc8yZ7NZSLg82&limit=12";
+    }
     
     $.ajax({
         url: queryURL,
@@ -48,7 +53,7 @@ $(document).on("click", "button", function() { // On click event listener for <b
             gifImage.attr("data-animate", results[i].images.fixed_height.url)
             gifImage.attr("data-still", results[i].images.fixed_height_still.url)
             
-            $(gifDiv).addClass("col-6")
+            $(gifDiv).addClass("col-lg-4 col-sm-6 col-xs-12")
             $(gifDiv).append(p)
             $(gifDiv).append(gifImage)
             
